@@ -6,10 +6,10 @@ export default function Sidebar() {
       <NavLink to="/" className={({ isActive }) => (isActive ? "text-2xl font-bold" : "text-gray-700 cursor-pointer")}>
         Dashboard
       </NavLink>
-      <NavLink end to="/transactions" className={({ isActive }) => (isActive ? "text-2xl font-bold" : "text-gray-700 cursor-pointer")}>
+      <NavLink end to="transactions" className={({ isActive }) => (isActive ? "text-2xl font-bold" : "text-gray-700 cursor-pointer")}>
         Ledger
       </NavLink>
-      <NavLink to="/transactions/add" className={({ isActive }) => (isActive ? "text-2xl font-bold  " : "text-gray-700 cursor-pointer ")}>
+      <NavLink to="add" className={({ isActive }) => (isActive ? "text-2xl font-bold  " : "text-gray-700 cursor-pointer ")}>
         Add Transaction
       </NavLink>
     </nav>
