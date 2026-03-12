@@ -1,14 +1,21 @@
 
 import './App.css'
+import { RouterProvider, Route, createRoutesFromElements, createBrowserRouter } from 'react-router-dom'
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<h1>Emmanuel-SwiftCash Finance Tracker</h1>} />
+  )
+)
 
 function App() {
 
   return (
-    <>
-    <h1 className=' flex text-2xl text-amber-300'>Emmanuel-SwiftCash Finance Tracker</h1>
-    </>
+    <RouterProvider router={router} />
   )
 }
+
+
 
 export default App
 
