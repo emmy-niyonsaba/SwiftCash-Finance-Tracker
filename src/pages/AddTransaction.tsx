@@ -1,15 +1,16 @@
 import { useRef, useEffect } from "react";
-import { Form } from "react-router-dom";
+import { Form ,useNavigation} from "react-router-dom";
 
 function AddTransaction() {
   const inputRef = useRef();
+  const navigation = useNavigation();
 
   useEffect(() => {
     inputRef.current.focus();
   }, []);
 
   return (
-    <div className=" flex items-center justify-center mx-auto">
+    <div className=" flex items-center justify-center mx-auto mt-10 ">
       <div className="  bg-white shadow-xl rounded-2xl p-8">
 
         <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">
@@ -23,7 +24,7 @@ function AddTransaction() {
               Description
             </label>
 
-            <input
+            <textarea
               ref={inputRef}
               name="description"
               placeholder="Enter description"
@@ -60,12 +61,29 @@ function AddTransaction() {
               <option value="expense">Expense</option>
             </select>
           </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-600 mb-1">
+              Category
+            </label>
+
+            <select
+              name="category"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="income">Salary</option>
+              <option value="expense">Food</option>
+              <option value="expense">Rent</option>
+              <option value="expense">Leisure</option>
+              <option value="expense">Other..</option>
+            </select>
+          </div>
 
           <button
             type="submit"
             className="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition duration-200"
+          disabled={navigation.state === "submitting"}
           >
-            Add Transaction
+            {navigation.state === "submitting" ? "Adding..." : "Add Transaction"}
           </button>
 
         </Form>
