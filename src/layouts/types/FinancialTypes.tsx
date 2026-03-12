@@ -1,5 +1,4 @@
 export type TransactionType = "income" | "expense";
-
 export type Category = "Salary"| "Food"| "Rent"| "Leisure"| "Other";
 
 export type Transaction = {

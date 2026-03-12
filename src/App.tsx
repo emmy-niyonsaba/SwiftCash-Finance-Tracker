@@ -2,13 +2,17 @@
 import './App.css'
 import { RouterProvider, Route, createRoutesFromElements, createBrowserRouter } from 'react-router-dom'
 import AppLayout from './layouts/AppLayout'
+import Dashoard from './pages/Dashoard'
+import TransactionList from './pages/TransactionList'
+import AddTransaction from './pages/AddTransaction'
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<AppLayout />} >
-      <Route path='/' element={<h1>Dashboard</h1>} />
-      <Route path='/transactions' element={<h1>Ledger</h1>} />
-      <Route path='/transactions/add' element={<h1>Add Transaction</h1>} />
+    <Route  path ='/' element={<AppLayout />} >
+      <Route index element={<Dashoard/>}/>
+      <Route path='transactions' element={<TransactionList/>} />
+      <Route path='transactions/add' element={<AddTransaction/>} />
 
     </Route>
   )
