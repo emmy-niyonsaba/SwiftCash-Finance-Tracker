@@ -11,7 +11,6 @@ export default function NotFound() {
           </svg>
         </div>
 
-        {/* 404 */}
         <h1 className="text-8xl font-black text-slate-800 leading-none mb-2">404</h1>
         <h2 className="text-xl font-semibold text-slate-700 mb-3">Page Not Found</h2>
         <p className="text-slate-500 text-sm leading-relaxed mb-8">
@@ -19,7 +18,6 @@ export default function NotFound() {
           Let's get you back on track.
         </p>
 
-        {/* CTA */}
         <div className="flex items-center justify-center gap-3">
           <Link
             to="/"

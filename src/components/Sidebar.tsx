@@ -20,7 +20,7 @@ export default function Sidebar() {
 
   return (
     <aside className="flex flex-col h-screen w-64 bg-slate-900 text-white shadow-2xl shrink-0">
-      {/* Brand */}
+    
       <div className="flex items-center gap-3 px-6 py-5 border-b border-slate-700/60">
         <div className="w-9 h-9 bg-emerald-500 rounded-lg flex items-center justify-center shadow-lg">
           <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -33,7 +33,7 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* Navigation */}
+    
       <nav className="flex flex-col gap-1 px-3 py-5 flex-1">
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest px-3 mb-2">Menu</p>
 
@@ -59,7 +59,6 @@ export default function Sidebar() {
         )}
       </nav>
 
-      {/* Footer */}
       <div className="px-6 py-4 border-t border-slate-700/60">
         <p className="text-xs text-slate-500 text-center">© 2026 SwiftCash</p>
       </div>

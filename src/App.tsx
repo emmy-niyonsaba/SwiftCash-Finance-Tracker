@@ -8,6 +8,7 @@ import TransactionList from './pages/TransactionList'
 import AddTransaction from './pages/AddTransaction'
 import ViewTransaction from './pages/ViewTransaction'
 import NotFound from './pages/NotFound'
+import TransactionsErrorBoundary from './pages/TransactionsErrorBoundary'
 import { transactionsLoader } from './loaders/TransactionsLoader'
 import { transactionAction } from './actions/TransactionAction'
 import DeleteTransaction from './components/DeleteTransaction'
@@ -17,15 +18,14 @@ const router = createBrowserRouter(
     <Route path="/" element={<AppLayout />}>
       <Route index element={<Dashboard />} />
 
-      {/* Transactions section — layout wraps list, add, view, delete */}
-      <Route path="transactions" element={<TransactionLayout />}>
+      <Route path="transactions" element={<TransactionLayout />} errorElement={<TransactionsErrorBoundary />}>
         <Route index element={<TransactionList />} loader={transactionsLoader} />
         <Route path="add" element={<AddTransaction />} action={transactionAction} />
         <Route path="view/:transactionId" element={<ViewTransaction />} />
         <Route path="delete/:transactionId" element={<DeleteTransaction />} />
       </Route>
 
-      {/* 404 – catches any unmatched path */}
+     
       <Route path="*" element={<NotFound />} />
     </Route>
   )
