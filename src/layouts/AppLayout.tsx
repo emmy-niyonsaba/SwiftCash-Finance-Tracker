@@ -1,15 +1,13 @@
-import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../components/Sidebar'
+
 function AppLayout() {
   return (
-    <div className=' flex'>
-      <div >
-        <Sidebar />
-      </div>
-     <div className=' w-full bg-amber-200'>
-       <Outlet />
-     </div>
+    <div className="flex h-screen overflow-hidden bg-slate-100">
+      <Sidebar />
+      <main className="flex-1 overflow-y-auto">
+        <Outlet />
+      </main>
     </div>
   )
 }
